@@ -10,11 +10,11 @@ Currently, this doesn't support searching people, but it might in the future.
 This API can be used through HTTP requests with the endpoints provided in the documentation, or directly by dumping the source code in your java project.
 
 # Setup
-The source code is available and you can compile/run it locally.
+The entire source code is available in this repo and you can clone it and compile/run it locally.
 
 Alternatively, you can use the jar provided in the releases tab: https://github.com/WolfDWyc/ImdbApi/releases/
 
-It's not currently hosted publicly anywhere, but if there's any need for it to let me know in the issues tab and i'll consider it.
+The API is not currently hosted anywhere publicly, but if there's any need for it to let me know in the issues tab and I'll consider it.
  
 # Documentation
  Full documentation for usage of all endpoints with examples is available here: https://app.gitbook.com/@yoavwolfdw/s/imdbapi/
