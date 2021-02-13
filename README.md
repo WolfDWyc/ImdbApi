@@ -5,6 +5,8 @@ IMDb has no public API and only provides their data in a few big files. This is 
 
 Currently, this doesn't support searching people, but it might in the future.
 
+If you end up using this library, please let me know either through discord discord (https://discordapp.com/users/217353364076232705) or through email (yoavwolfdw@gmail.com) as it's one of my first public projects and I'd love to know what you thought of it.
+
 # Usage
  
 This API can be used through HTTP requests with the endpoints provided in the documentation, or directly by dumping the source code in your java project.
