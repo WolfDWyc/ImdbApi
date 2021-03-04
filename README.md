@@ -1,11 +1,11 @@
 # ImdbApi
 An open-source Java Rest API for IMDb that lets you search and query movies, shows, episodes and all other titles from IMDb.
 
-IMDb has no public API and only provides their data in a few big files. This is a free solution that lets you search and get info about IMDb titles.
+IMDb has no public API and only provides their data in a few big files. This is a free solution that lets you search and get info about IMDb titles (Movies, TV Shows, etc.).
 
 Currently, this doesn't support searching people, but it might in the future.
 
-If you end up using this, please let me know either through discord discord (https://discordapp.com/users/217353364076232705) or through email (yoavwolfdw@gmail.com) and feel free to also let me know if you have any issues/bugs.
+If you end up using this, please let me know either through discord (https://discordapp.com/users/217353364076232705) or through email (yoavwolfdw@gmail.com) and feel free to also let me know if you have any issues/bugs.
 
 # Usage
  
