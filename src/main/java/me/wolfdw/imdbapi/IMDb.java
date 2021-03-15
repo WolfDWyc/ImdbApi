@@ -33,10 +33,6 @@ public class IMDb {
         return titleMap.get(id);
     }
 
-    public List<Title> searchTitle(String name) {
-        return titleList.stream().filter(e -> e.getName().equals(name)).collect(Collectors.toList());
-    }
-
     public List<Title> topEntries(TitleSearchOptions searchOptions) {
 
         List<Title> resultList = titleList.stream().filter(e -> filterTitle(e, searchOptions.getName(),

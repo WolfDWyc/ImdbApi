@@ -1,9 +1,9 @@
 package me.wolfdw.imdbapi.web;
 
 import me.wolfdw.imdbapi.IMDb;
+import me.wolfdw.imdbapi.TitleSearchOptions;
 import me.wolfdw.imdbapi.titles.Series;
 import me.wolfdw.imdbapi.titles.Title;
-import me.wolfdw.imdbapi.TitleSearchOptions;
 import me.wolfdw.imdbapi.titles.TitleType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
