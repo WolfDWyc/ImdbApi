@@ -1,5 +1,5 @@
 # ImdbApi
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7efdfae597b141009b10df00a2632486)](https://www.codacy.com/gh/WolfDWyc/ImdbApi/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=WolfDWyc/ImdbApi&amp;utm_campaign=Badge_Grade)[![CodeFactor](https://www.codefactor.io/repository/github/wolfdwyc/imdbapi/badge)](https://www.codefactor.io/repository/github/wolfdwyc/imdbapi)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7efdfae597b141009b10df00a2632486)](https://www.codacy.com/gh/WolfDWyc/ImdbApi/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=WolfDWyc/ImdbApi&amp;utm_campaign=Badge_Grade) [![CodeFactor](https://www.codefactor.io/repository/github/wolfdwyc/imdbapi/badge)](https://www.codefactor.io/repository/github/wolfdwyc/imdbapi)
 
 An open-source Java Rest API for IMDb that lets you search and query movies, shows, episodes and all other titles from IMDb.
 
