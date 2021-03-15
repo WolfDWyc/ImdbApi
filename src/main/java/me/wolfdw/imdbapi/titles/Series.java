@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class Series extends Title {
 
 
-    List<List<Episode>> seasons;
+    private final List<List<Episode>> seasons;
 
     public Series(Title t) {
         super(t);
@@ -59,8 +59,8 @@ public class Series extends Title {
     @JsonProperty("episodes")
     public List<Episode> getAllEpisodes() {
         List<Episode> allEpisodes = new ArrayList<>();
-        for (int i = 0; i < seasons.size(); i++) {
-            seasons.get(i).forEach(e -> {
+        for (List<Episode> season : seasons) {
+            season.forEach(e -> {
                 if (e != null)
                     allEpisodes.add(e);
             });

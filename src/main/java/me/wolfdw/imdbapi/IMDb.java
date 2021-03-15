@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class IMDb {
 
@@ -38,36 +37,40 @@ public class IMDb {
         return titleList.stream().filter(e -> e.getName().equals(name)).collect(Collectors.toList());
     }
 
-    public List<Title> topEntries(String name, TitleType titleType, List<String> genres, int amount, int minVotes, float minRating, final int order) {
-        int reverse = order == 2 ? -1 : 1;
-        List<Title> resultList = null;
-        Stream<Title> stream = titleList.stream().filter(e -> {
-            if (name != null && !e.getName().equals(name))
-                return false;
-            if (titleType != null && e.getType() != titleType)
-                return false;
-            if (genres != null && (e.getGenres() == null || !e.getGenres().containsAll(genres)))
-                return false;
-            if (e.getNumVotes() < minVotes)
-                return false;
-            return !(e.getAverageRating() < minRating);
-         });
-        if (order == 0) {
-            resultList = stream.collect(Collectors.toList());
-        } else {
-            resultList = stream.sorted((x, y) -> {
-                        if (y.getAverageRating() == x.getAverageRating())
-                            return 0;
-                        if (y.getAverageRating() > x.getAverageRating())
-                            return -1 * reverse;
-                        return reverse;
-                    }
-            ).collect(Collectors.toList());
+    public List<Title> topEntries(TitleSearchOptions searchOptions) {
+
+        List<Title> resultList = titleList.stream().filter(e -> filterTitle(e, searchOptions.getName(),
+                searchOptions.getTitleType(), searchOptions.getGenres(), searchOptions.getMinVotes(),
+                searchOptions.getMinRating())).limit(searchOptions.getAmount()).collect(Collectors.toList());
+
+
+        if (searchOptions.getOrder() != 0) {
+            int reverse = searchOptions.getOrder() == 2 ? -1 : 1;
+            resultList.sort((x,y) -> titleComparator(x, y, reverse));
         }
-        return resultList.subList(0, Math.min(amount,resultList.size()));
+        return resultList;
+    }
+
+    private boolean filterTitle(Title e, String name, TitleType titleType, List<String> genres, int voteNum, float rating) {
+        if (name != null && !e.getName().equals(name))
+            return false;
+        if (titleType != null && e.getType() != titleType)
+            return false;
+        if (genres != null && (e.getGenres() == null ||
+                !e.getGenres().containsAll(genres)))
+            return false;
+        if (e.getNumVotes() < voteNum)
+            return false;
+        return !(e.getAverageRating() < rating);
     }
 
 
-
-
+    private int titleComparator(Title t1, Title t2, int reverse) {
+        if (t2.getAverageRating() == t1.getAverageRating())
+            return 0;
+        if (t2.getAverageRating() > t1.getAverageRating())
+            return -1 * reverse;
+        return reverse;
     }
+
+}

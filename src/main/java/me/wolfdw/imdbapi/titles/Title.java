@@ -5,19 +5,20 @@ import java.util.List;
 
 public class Title {
 
-    final String id;
-    final TitleType type;
-    final String name;
-    final String originalName;
-    final boolean adult;
-    final int startYear;
-    final int endYear;
-    final int episodeLength;
-    final List<String> genres;
-    float averageRating;
-    int numVotes;
+    protected final String id;
+    protected final TitleType type;
+    protected final String name;
+    protected final String originalName;
+    protected final boolean adult;
+    protected final int startYear;
+    protected final int endYear;
+    protected final int episodeLength;
+    protected final List<String> genres;
+    protected float averageRating;
+    protected int numVotes;
 
-    private Title(String id, TitleType type, String name, String originalName, boolean adult, int startYear, int endYear, int episodeLength, List<String> genres, float averageRating, int numVotes) {
+    private Title(String id, TitleType type, String name, String originalName, boolean adult, int startYear, int endYear,
+                  int episodeLength, List<String> genres, float averageRating, int numVotes) {
         this.id = id;
         this.type = type;
         this.name = name;
@@ -32,7 +33,8 @@ public class Title {
     }
 
     public Title(Title t) {
-        this(t.id, t.type, t.name, t.originalName, t.adult, t.startYear, t.endYear, t.episodeLength, t.genres, t.averageRating, t.numVotes);
+        this(t.id, t.type, t.name, t.originalName, t.adult, t.startYear, t.endYear, t.episodeLength, t.genres,
+                t.averageRating, t.numVotes);
 
     }
 

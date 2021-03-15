@@ -11,10 +11,10 @@ import java.io.IOException;
 
 public class Episode extends Title {
 
-    @JsonSerialize(using = ParentSerializer.class, as=Title.class)
-    Title parent;
-    int seasonNumber;
-    int episodeNumber;
+    @JsonSerialize(using=ParentSerializer.class, as=Title.class)
+    private Title parent;
+    private int seasonNumber;
+    private int episodeNumber;
 
      public Episode(Title t) {
          super(t);
@@ -90,7 +90,7 @@ public class Episode extends Title {
         public void serialize(Title tempTitle,
                               JsonGenerator jsonGenerator,
                               SerializerProvider serializerProvider)
-                throws IOException, JsonProcessingException {
+                throws IOException {
             jsonGenerator.writeObject(tempTitle.getId());
         }
     }

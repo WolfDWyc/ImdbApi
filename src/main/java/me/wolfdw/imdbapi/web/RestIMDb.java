@@ -3,7 +3,7 @@ package me.wolfdw.imdbapi.web;
 import me.wolfdw.imdbapi.IMDb;
 import me.wolfdw.imdbapi.titles.Series;
 import me.wolfdw.imdbapi.titles.Title;
-
+import me.wolfdw.imdbapi.TitleSearchOptions;
 import me.wolfdw.imdbapi.titles.TitleType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,8 +16,7 @@ import java.util.List;
 public class RestIMDb {
     public static IMDb imdb;
 
-    @GetMapping(value = "/get", params = {"id"})
-    public Title getTitleById(@RequestParam(value = "id") String id,
+    @GetMapping(value = "/get", params = {"id"}) public Title getTitleById(@RequestParam(value = "id") String id,
                               @RequestParam(value="includeEpisodes", required = false, defaultValue = "true") boolean includeEpisodes) {
         return returnRequiredTitle(imdb.getTitle(id),includeEpisodes);
     }
@@ -41,15 +40,19 @@ public class RestIMDb {
                                      @RequestParam(value = "minRating", required = false, defaultValue = "0") float minRating,
                                      @RequestParam(value = "order", required = false, defaultValue = "none") String order,
                                      @RequestParam(value = "includeEpisodes", required = false, defaultValue = "false") boolean includeEpisodes) {
+        long time = System.nanoTime();
         int orderParam = 0;
         if (order.equals("asc"))
             orderParam = 1;
         else if (order.equals("desc"))
             orderParam = 2;
         List<Title> titleList = new ArrayList<>();
-        for (Title t: imdb.topEntries( name.equals("") ? null : name,type.equals("") ? null : TitleType.titleTypeById(type), genres, amount,minVotes ,minRating, orderParam)) {
+        TitleSearchOptions searchOptions = new TitleSearchOptions( name.equals("") ? null : name,
+                type.equals("") ? null : TitleType.titleTypeById(type), genres, amount,minVotes ,minRating, orderParam);
+        for (Title t: imdb.topEntries(searchOptions)) {
             titleList.add(returnRequiredTitle(t,includeEpisodes));
         }
+        System.out.println((System.nanoTime() - time));
         return titleList;
     }
 

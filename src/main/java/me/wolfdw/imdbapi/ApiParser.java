@@ -32,7 +32,6 @@ public class ApiParser {
     }
 
 
-
     public IMDb initializeApi() throws IOException {
         System.out.println("Initializing API...");
         IMDb imdb = new IMDb();
