@@ -57,7 +57,7 @@ public class IMDb {
             return false;
         if (e.getNumVotes() < voteNum)
             return false;
-        return !(e.getAverageRating() < rating);
+        return e.getAverageRating() >= rating;
     }
 
 
