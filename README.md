@@ -21,7 +21,7 @@ Alternatively, you can use the jar provided in the releases tab: https://github.
 The API is not currently hosted anywhere publicly, but if there's any need for it to let me know in the issues tab, and I'll consider it.
  
 ## Documentation
- Full documentation for usage of all endpoints with examples is available here: https://app.gitbook.com/@wolfdw/s/imdbapi/
+ Full documentation for usage of all endpoints with examples is available here: https://app.gitbook.com/@yoavwolfdw/s/imdbapi/
  
 ## Disclaimers
  - For the time being, this doesn't sync with IMDb automatically. IMDb updates their files every day, and in the future there might be an "auto-update" mode, but for now, it will only have data from the time you started running it at.
